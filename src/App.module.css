@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+}
+
+.desktop-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(to right, #115DA3 , #4ECFED);
+}
+
+.card-content {
+  display: block;
+}
+
+
+.city-state {
+  font-size: 18px;
+  font-family: 'Open Sans';
+  display: inline;
+  margin-left: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+.current-date {
+  font-size: 14px;
+  font-family: 'Open Sans';
+  color: white;
+}
+
+@media only screen and (max-width: 992px) {
+  .desktop-container {
+    padding: 16px;
+  }
+}
