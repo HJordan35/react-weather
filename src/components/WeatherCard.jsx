@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import dallas from '../assets/Dallas.svg';
 import styles from './WeatherCard.module.css';
 
+//Components
+import CurrentTemp from '../components/CurrentTemp/CurrentTemp';
+
 class WeatherCard extends Component {
 
     componentDidMount() {
@@ -11,7 +14,7 @@ class WeatherCard extends Component {
     render() {
         return (
             <div className={styles['weather-card']}>
-                <div className={styles['temp-row']}>65</div>
+                <CurrentTemp />
                 <img src={dallas} className={styles['card-img']} alt="Card cap" />
 
                 {/* TEMPERATURE TILES */}
