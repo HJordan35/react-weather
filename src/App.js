@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import styles from './App.module.css';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+
 //Components
 import WeatherCard from './components/WeatherCard';
+
+//FA Library
+library.add(faMapMarkerAlt);
 
 class App extends Component {
   render() {
@@ -11,6 +18,7 @@ class App extends Component {
         <div className={styles['desktop-container']}>
           <div className={styles['card-content']}>
             <section>
+              <FontAwesomeIcon className={styles['fa-map-marker-alt']} icon="map-marker-alt" />
               <h1 className={styles['city-state']}>Dallas, TX</h1>
               <p className={styles['current-date']}>Saturday, Sep 16, 2018</p>
             </section>

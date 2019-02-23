@@ -10,10 +10,13 @@
   background-image: linear-gradient(to right, #115DA3 , #4ECFED);
 }
 
+.fa-map-marker-alt {
+  color: white;
+}
+
 .card-content {
   display: block;
 }
-
 
 .city-state {
   font-size: 18px;
