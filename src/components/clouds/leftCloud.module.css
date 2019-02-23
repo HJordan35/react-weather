@@ -1,0 +1,26 @@
+.left-cloud {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {  
+    .left-cloud{
+      display: block;
+      position: relative;
+      left: 50px;
+      animation: moveInLeft 1s ease-out;
+      animation-delay: .75s;
+      animation-fill-mode: backwards;
+    }
+  }
+
+  @keyframes moveInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  
