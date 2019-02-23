@@ -10,6 +10,18 @@ function currentWeather(state = {}, action) {
     }
 }
 
+// SELECTOR
+export const getFahrenheit = state => {
+    if(state.currentWeather.main) {
+        return Math.round(state.currentWeather.main.temp * (9/5) - 459.67);
+    }
+} 
+export const getCelsius = state => {
+    if(state.currentWeather.main) {
+        return Math.round(state.currentWeather.main.temp - 273.15);
+    }
+} 
+
 const weatherApp = combineReducers({
     currentWeather
 })

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 
 //Components
-import WeatherCard from './components/WeatherCard';
+import WeatherCard from './containers/WeatherCard';
 import LeftCloud from './components/clouds/leftCloud';
 import RightCloud from './components/clouds/rightCloud';
 

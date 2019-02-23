@@ -3,6 +3,11 @@ import dallas from '../assets/Dallas.svg';
 import styles from './WeatherCard.module.css';
 
 class WeatherCard extends Component {
+
+    componentDidMount() {
+        this.props.getCurrentWeather('test', 'test');
+    }
+
     render() {
         return (
             <div className={styles['weather-card']}>
