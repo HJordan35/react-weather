@@ -30,10 +30,27 @@ export const getCelsius = state => {
     if(state.currentWeather.main) {
         return Math.round(state.currentWeather.main.temp - 273.15);
     }
-} 
+}
+
+export const getCurrentFahrenheitByForecastDay = (state, tileNum) => {
+    if(state.forecastWeather.forecastDates) {
+        let currentTileDate = state.forecastWeather.forecastDates[tileNum - 1]
+        let item = state.forecastWeather.weatherByDate[currentTileDate];
+        return Math.round(item.temp * (9/5) - 459.67);
+    }
+}
+
+export const getCurrentCelsiusByForecastDay = (state, tileNum) => {
+    if(state.forecastWeather.forecastDates) {
+        let currentTileDate = state.forecastWeather.forecastDates[tileNum - 1]
+        let item = state.forecastWeather.weatherByDate[currentTileDate];
+        return Math.round(item.temp - 273.15);
+    }
+}
 
 const weatherApp = combineReducers({
-    currentWeather
+    currentWeather,
+    forecastWeather
 })
 
 export default weatherApp;
