@@ -2,6 +2,7 @@
     border-radius: 4px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, .2);
     overflow: hidden;
+    position: relative;
     animation: moveInBottom 1s ease-out;
   }
   
@@ -15,21 +16,19 @@
     flex:1;
   }
   
-  .temp-row {
-    position: absolute;
+  .current-temp-row {
     display: flex;
-    color: white;
-    font-size: 48px;
     flex-direction: row;
-    z-index: 1;
+    width: 100%;
+    position: absolute;
   }
-  
+
   .temp-tile-container {
     display: flex;
     margin-top: -4px;
   }
 
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 700px) {
     .weather-card {
       max-width: 670px;
     }
@@ -44,7 +43,7 @@
 
   }
   
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 700px) {
     .desktop-container {
       padding: 16px;
     }
@@ -55,6 +54,10 @@
 
     .card-img {
       display: none;
+    }
+
+    .current-temp-row {
+      flex-direction: column;
     }
 
     .temp-tile-container {

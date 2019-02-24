@@ -1,9 +1,6 @@
 .temp-container {
-    position: absolute;
     display: flex;
     height: 65px;
-    margin-left: 28px;
-    margin-top: 9px;
 
     color: #65AED5;
     font-family: 'Open Sans';
