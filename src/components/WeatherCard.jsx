@@ -32,8 +32,9 @@ class WeatherCard extends Component {
         return (
             <div className={styles['weather-card']}>
                 <div className={styles['current-temp-row']}>
+                    <div className={styles['mobile-toggle']}><ToggleTemp /></div>
                     <CurrentTemp currentWeather={this.props.currentWeather}/>
-                    <ToggleTemp />
+                    <div className={styles['desktop-toggle']}><ToggleTemp /></div>
                 </div>
                 <img src={dallas} className={styles['card-img']} alt="Card cap" />
                 <img src={mobileBackground} className={styles['mobile-img']} alt="Card cap" />
