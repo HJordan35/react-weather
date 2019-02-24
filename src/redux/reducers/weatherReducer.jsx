@@ -21,11 +21,13 @@ function forecastWeather(state = {}, action) {
 }
 
 // SELECTOR
-export const getCurrentForecastDay = (state, tileNum) => {
+export const getForecastList = (state) => {
     if(state.forecastWeather.forecastDates) {
-        let currentTileDate = state.forecastWeather.forecastDates[tileNum - 1]
-        let item = state.forecastWeather.weatherByDate[currentTileDate];
-        return item;
+        let weatherData = [];
+        for(let date of state.forecastWeather.forecastDates) {
+            weatherData.push(state.forecastWeather.weatherByDate[date]);
+        }
+        return weatherData;
     }
 }
 
