@@ -9,14 +9,12 @@ import {
 import WeatherCard from '../components/WeatherCard';
 
 //Selectors
-import { getFahrenheit, getCelsius, getCurrentFahrenheitByForecastDay } from '../redux/reducers/weatherReducer';
+import { getCurrentForecastDay } from '../redux/reducers/weatherReducer';
 
 const mapStateToProps = (state)=> {
     return {
         currentWeather: state.currentWeather,
-        currentFahrenheit: getFahrenheit(state),
-        currentCelsius: getCelsius(state),
-        tileOne: getCurrentFahrenheitByForecastDay(state, 1),
+        tileOne: getCurrentForecastDay(state, 1),
     }
 }
 
