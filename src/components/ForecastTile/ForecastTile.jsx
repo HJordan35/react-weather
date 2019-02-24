@@ -34,7 +34,7 @@ class ForecastTile extends PureComponent {
     }
 
     render() {
-        let { weatherData, weatherDate } = this.props;
+        let { weatherData, weatherDate, isFahrenheit } = this.props;
         let weatherStatus = this.setWeatherState();
         return (
             <React.Fragment>
@@ -42,7 +42,7 @@ class ForecastTile extends PureComponent {
                     <div className={styles['temp-tile']}>
                         <p className={styles['tile-day']}>{moment.unix(weatherDate).format('ddd')}</p>
                         {weatherStatus}
-                        <p className={styles['tile-temp']}>{weatherData.tempFahrenheit}&#176;</p>
+                        <p className={styles['tile-temp']}>{isFahrenheit ? weatherData.tempFahrenheit : weatherData.tempCelsius}&#176;</p>
                     </div>)
                 }
             </React.Fragment>

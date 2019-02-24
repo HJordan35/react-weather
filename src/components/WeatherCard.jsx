@@ -9,7 +9,10 @@ import ForecastTile from './ForecastTile/ForecastTile';
 import ToggleTemp from './ToggleTemp/ToggleTemp';
 
 class WeatherCard extends Component {
-
+    constructor() {
+        super();
+        this.state = { isFahrenheit: true };
+    }
     componentDidMount() {
         this.props.getCurrentWeather('test', 'test');
         this.props.getForecastWeather('test', 'test');
@@ -21,10 +24,15 @@ class WeatherCard extends Component {
             for (let i=0; i<5; i++) {
                 tiles.push(<ForecastTile 
                     weatherDate={this.props.forecastDates[i]}
-                    weatherData={this.props.forecastData[i]} />)
+                    weatherData={this.props.forecastData[i]} 
+                    isFahrenheit={this.state.isFahrenheit}/>)
             }
         }
         return tiles;
+    }
+
+    toggleTempTypeHandler = (checked) => {
+        this.setState({isFahrenheit: checked});
     }
 
     render() {
@@ -32,9 +40,9 @@ class WeatherCard extends Component {
         return (
             <div className={styles['weather-card']}>
                 <div className={styles['current-temp-row']}>
-                    <div className={styles['mobile-toggle']}><ToggleTemp /></div>
-                    <CurrentTemp currentWeather={this.props.currentWeather}/>
-                    <div className={styles['desktop-toggle']}><ToggleTemp /></div>
+                    <div className={styles['mobile-toggle']}><ToggleTemp onChange={this.toggleTempTypeHandler} isFahrenheit={this.state.isFahrenheit}/></div>
+                    <CurrentTemp currentWeather={this.props.currentWeather} isFahrenheit={this.state.isFahrenheit}/>
+                    <div className={styles['desktop-toggle']}><ToggleTemp onChange={this.toggleTempTypeHandler} isFahrenheit={this.state.isFahrenheit}/></div>
                 </div>
                 <img src={dallas} className={styles['card-img']} alt="Card cap" />
                 <img src={mobileBackground} className={styles['mobile-img']} alt="Card cap" />
