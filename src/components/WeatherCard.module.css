@@ -22,12 +22,6 @@
   .temp-tile-container {
     display: flex;
   }
-  
-  .temp-tile {
-    background-color: white;
-    border: .5px solid  lightgray;
-    height: 142px;
-  }
 
   @media only screen and (min-width: 992px) {
     .weather-card {
@@ -36,10 +30,6 @@
   
     .temp-tile-container {
       flex-direction: row;
-    }
-
-    .temp-tile {
-      flex: 10%;
     }
   }
   
@@ -55,12 +45,6 @@
     .temp-tile-container {
       flex-direction: column;
     }
-  
-    .temp-tile {
-      flex: 1 0 auto;
-      height: 65px;
-    }
-  
   }
   
   @keyframes moveInBottom {

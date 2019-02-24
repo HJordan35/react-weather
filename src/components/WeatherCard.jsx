@@ -4,6 +4,7 @@ import styles from './WeatherCard.module.css';
 
 //Components
 import CurrentTemp from '../components/CurrentTemp/CurrentTemp';
+import ForecastTile from './ForecastTile/ForecastTile';
 
 class WeatherCard extends Component {
 
@@ -21,11 +22,11 @@ class WeatherCard extends Component {
 
                 {/* TEMPERATURE TILES */}
                 <div className={styles['temp-tile-container']}>
-                    <div className={styles['temp-tile']}></div>
-                    <div className={styles['temp-tile']}></div>
-                    <div className={styles['temp-tile']}></div>
-                    <div className={styles['temp-tile']}></div>
-                    <div className={styles['temp-tile']}></div>
+                    <ForecastTile />
+                    <ForecastTile />
+                    <ForecastTile />
+                    <ForecastTile />
+                    <ForecastTile />
                 </div>
             </div>
         )

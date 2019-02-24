@@ -1,0 +1,19 @@
+.temp-tile {
+    background-color: white;
+    border: .5px solid  lightgray;
+    height: 142px;
+  }
+
+  @media only screen and (min-width: 992px) {
+    .temp-tile {
+      flex: 10%;
+    }
+  }
+    
+  @media only screen and (max-width: 992px) {
+    .temp-tile {
+      flex: 1 0 auto;
+      height: 65px;
+    }
+  
+  }
