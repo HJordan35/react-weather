@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import dallas from '../assets/Dallas.svg';
+import mobileBackground from '../assets/mobileBackground.svg';
 import styles from './WeatherCard.module.css';
 
 //Components
@@ -31,7 +32,7 @@ class WeatherCard extends Component {
             <div className={styles['weather-card']}>
                 <CurrentTemp />
                 <img src={dallas} className={styles['card-img']} alt="Card cap" />
-
+                <img src={mobileBackground} className={styles['mobile-img']} alt="Card cap" />
                 {/* TEMPERATURE TILES */}
                 <div className={styles['temp-tile-container']}>
                     {forecastTiles}

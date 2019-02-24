@@ -9,6 +9,11 @@
     width: 100%;
     flex: 1;
   }
+
+  .mobile-img {
+    width: 100%;
+    flex:1;
+  }
   
   .temp-row {
     position: absolute;
@@ -21,6 +26,7 @@
   
   .temp-tile-container {
     display: flex;
+    margin-top: -4px;
   }
 
   @media only screen and (min-width: 992px) {
@@ -31,6 +37,11 @@
     .temp-tile-container {
       flex-direction: row;
     }
+
+    .mobile-img {
+      display: none;
+    }
+
   }
   
   @media only screen and (max-width: 992px) {
@@ -41,7 +52,11 @@
     .weather-card {
       width: 100%;
     }
-  
+
+    .card-img {
+      display: none;
+    }
+
     .temp-tile-container {
       flex-direction: column;
     }
