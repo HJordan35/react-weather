@@ -9,10 +9,12 @@ class WeatherCard extends Component {
 
     componentDidMount() {
         this.props.getCurrentWeather('test', 'test');
+        this.props.getForecastWeather('test', 'test');
     }
 
     render() {
         return (
+            
             <div className={styles['weather-card']}>
                 <CurrentTemp />
                 <img src={dallas} className={styles['card-img']} alt="Card cap" />
