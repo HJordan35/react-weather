@@ -13,20 +13,28 @@ class WeatherCard extends Component {
         this.props.getForecastWeather('test', 'test');
     }
 
+    renderTiles() {
+        let tiles = [];
+        if (this.props.forecastData && this.props.forecastDates) {
+            for (let i=0; i<5; i++) {
+                tiles.push(<ForecastTile 
+                    weatherDate={this.props.forecastDates[i]}
+                    weatherData={this.props.forecastData[i]} />)
+            }
+        }
+        return tiles;
+    }
+
     render() {
+        let forecastTiles = this.renderTiles();
         return (
-            
             <div className={styles['weather-card']}>
                 <CurrentTemp />
                 <img src={dallas} className={styles['card-img']} alt="Card cap" />
 
                 {/* TEMPERATURE TILES */}
                 <div className={styles['temp-tile-container']}>
-                    <ForecastTile />
-                    <ForecastTile />
-                    <ForecastTile />
-                    <ForecastTile />
-                    <ForecastTile />
+                    {forecastTiles}
                 </div>
             </div>
         )
