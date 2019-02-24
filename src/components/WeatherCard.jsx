@@ -6,6 +6,7 @@ import styles from './WeatherCard.module.css';
 //Components
 import CurrentTemp from '../components/CurrentTemp/CurrentTemp';
 import ForecastTile from './ForecastTile/ForecastTile';
+import ToggleTemp from './ToggleTemp/ToggleTemp';
 
 class WeatherCard extends Component {
 
@@ -32,6 +33,7 @@ class WeatherCard extends Component {
             <div className={styles['weather-card']}>
                 <div className={styles['current-temp-row']}>
                     <CurrentTemp currentWeather={this.props.currentWeather}/>
+                    <ToggleTemp />
                 </div>
                 <img src={dallas} className={styles['card-img']} alt="Card cap" />
                 <img src={mobileBackground} className={styles['mobile-img']} alt="Card cap" />

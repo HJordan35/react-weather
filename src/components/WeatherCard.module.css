@@ -21,6 +21,8 @@
     flex-direction: row;
     width: 100%;
     position: absolute;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .temp-tile-container {
