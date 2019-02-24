@@ -10,6 +10,16 @@ function currentWeather(state = {}, action) {
     }
 }
 
+
+function forecastWeather(state = {}, action) {
+    switch (action.type) {
+        case AC.GET_FORECAST_WEATHER_SUCCESS:
+            return action.data
+        default:
+            return state
+    }
+}
+
 // SELECTOR
 export const getFahrenheit = state => {
     if(state.currentWeather.main) {
