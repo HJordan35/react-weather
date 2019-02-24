@@ -2,7 +2,7 @@
   display: none;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 900px) {
     .right-cloud{
       display: block;
       position: relative;
@@ -12,6 +12,21 @@
       animation: moveInRight 1s ease-out;
       animation-delay: .75s;
       animation-fill-mode: backwards;
+      z-index: 10;
+    }
+  }
+
+@media only screen and (max-width: 900px) and (min-width: 700px) {
+    .right-cloud{
+      display: block;
+      position: relative;
+      margin: -40px;
+      right: 90px;
+      bottom:100px;
+      animation: moveInRight 1s ease-out;
+      animation-delay: .75s;
+      animation-fill-mode: backwards;
+      z-index: 1;
     }
   }
 
