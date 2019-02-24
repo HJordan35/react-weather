@@ -1,19 +1,61 @@
 .temp-tile {
     background-color: white;
     border: .5px solid  lightgray;
+    color: #4A4A4A;
     height: 142px;
+    display: flex;
+    align-items: center;
+  }
+
+  .tile-data-container {
+    display: flex;
+  }
+
+  .tile-day {
+    font-family: "Open Sans";
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 16px;
+  }
+
+  .tile-temp {
+    font-family: "Open Sans";
+    font-size: 24px;
+    line-height: 33px;
+    margin: 0px;
+  }
+
+  .type-img {
+    height: 45px;
+    width: 40px;
   }
 
   @media only screen and (min-width: 992px) {
     .temp-tile {
       flex: 10%;
     }
+
+    .temp-tile {
+      flex-direction: column;
+      align-items: center;
+    }
   }
     
   @media only screen and (max-width: 992px) {
+    .tile-day {
+      margin: 0;
+    }
+    
     .temp-tile {
       flex: 1 0 auto;
       height: 65px;
+    }
+
+    .temp-tile {
+      flex-direction: row;
+      justify-content: space-around;
     }
   
   }

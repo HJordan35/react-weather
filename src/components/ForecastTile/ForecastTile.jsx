@@ -40,9 +40,9 @@ class ForecastTile extends PureComponent {
             <React.Fragment>
                 {this.props.weatherData && (
                     <div className={styles['temp-tile']}>
-                        <p>{moment.unix(weatherDate).format('ddd')}</p>
+                        <p className={styles['tile-day']}>{moment.unix(weatherDate).format('ddd')}</p>
                         {weatherStatus}
-                        <p>{weatherData.tempFahrenheit}</p>
+                        <p className={styles['tile-temp']}>{weatherData.tempFahrenheit}&#176;</p>
                     </div>)
                 }
             </React.Fragment>
