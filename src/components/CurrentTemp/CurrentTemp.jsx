@@ -5,10 +5,11 @@ import partCloudySvg from '../../assets/part-cloudy.svg';
 
 class CurrentTemp extends PureComponent {
     render() {
+        let {currentWeather} = this.props;
         return (
             <React.Fragment>
                 <div className={styles['temp-container']}>
-                    <span>65</span>
+                    <span>{currentWeather.tempFahrenheit}</span>
                     <span className={styles['degree-symbol']}>&#176;</span>
                     <img src={partCloudySvg} className={styles['type-img']} alt="Card cap" />
                     <div className={styles['status-wind-container']}>

@@ -30,7 +30,9 @@ class WeatherCard extends Component {
         let forecastTiles = this.renderTiles();
         return (
             <div className={styles['weather-card']}>
-                <CurrentTemp />
+                <div className={styles['current-temp-row']}>
+                    <CurrentTemp currentWeather={this.props.currentWeather}/>
+                </div>
                 <img src={dallas} className={styles['card-img']} alt="Card cap" />
                 <img src={mobileBackground} className={styles['mobile-img']} alt="Card cap" />
                 {/* TEMPERATURE TILES */}
