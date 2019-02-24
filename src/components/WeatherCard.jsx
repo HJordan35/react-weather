@@ -23,6 +23,7 @@ class WeatherCard extends Component {
         if (this.props.forecastData && this.props.forecastDates) {
             for (let i=0; i<5; i++) {
                 tiles.push(<ForecastTile 
+                    key={i}
                     weatherDate={this.props.forecastDates[i]}
                     weatherData={this.props.forecastData[i]} 
                     isFahrenheit={this.state.isFahrenheit}/>)
