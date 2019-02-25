@@ -9,10 +9,6 @@
     align-self: center;
 }
 
-.outer>div {
-    height: 100px;
-    width: 100px;
-}
 .loading-text {
     color: white;
     padding-top: 24px;
