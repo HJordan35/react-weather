@@ -9,7 +9,7 @@
       position: relative;
       left: 50px;
       animation: moveInLeft 1s ease-out;
-      animation-delay: .75s;
+      animation-delay: 1.5s;
       animation-fill-mode: backwards;
     }
   }

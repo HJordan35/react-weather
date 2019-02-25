@@ -10,7 +10,7 @@
       right: 90px;
       bottom:100px;
       animation: moveInRight 1s ease-out;
-      animation-delay: .75s;
+      animation-delay: 1.5s;
       animation-fill-mode: backwards;
       z-index: 10;
     }

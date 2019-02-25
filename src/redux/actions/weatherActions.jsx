@@ -54,7 +54,7 @@ export function getCurrentWeather(lat, lon) {
 export function getForecastWeather(lat, lon) {
     return dispatch => {
         dispatch(loadingForecast(true));
-        axios.get(`https://api.openweathermap.org/data/2.5/forecast?zip=75063&appid=a8e063c9811869e8c8135ef9d1da3c75`)
+        setTimeout(() => axios.get(`https://api.openweathermap.org/data/2.5/forecast?zip=75063&appid=a8e063c9811869e8c8135ef9d1da3c75`)
             .then(res => {
                 if (res.status === 200) {
                     let dayOne = moment().hour(12).add(1, 'days');
@@ -90,12 +90,13 @@ export function getForecastWeather(lat, lon) {
                     dispatch(loadingForecast(false));
                     dispatch(forecastWeatherSuccess(forecastModel));
                 }
-            })
+            }), 1000)
+
     }
 }
 
-function calcFahrenheit(kelvinTemp){
-    return Math.round(kelvinTemp * (9/5) - 459.67);
+function calcFahrenheit(kelvinTemp) {
+    return Math.round(kelvinTemp * (9 / 5) - 459.67);
 }
 
 function calcCelsius(kelvinTemp) {
