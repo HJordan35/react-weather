@@ -15,7 +15,9 @@ const mapStateToProps = (state)=> {
     return {
         currentWeather: state.currentWeather,
         forecastDates: state.forecastWeather.forecastDates,
-        forecastData: getForecastList(state)
+        forecastData: getForecastList(state),
+        isLoadingCurrent: state.weatherLoadStates.isLoadingCurrent,
+        isLoadingForecast: state.weatherLoadStates.isLoadingForecast,
     }
 }
 

@@ -17,8 +17,23 @@ export function forecastWeatherSuccess(data) {
     }
 }
 
+export function loadingCurrentWeather(isLoading) {
+    return {
+        type: AC.GET_CURRENT_WEATHER_LOADING,
+        isLoading: isLoading
+    }
+}
+
+export function loadingForecast(isLoading) {
+    return {
+        type: AC.GET_FORECAST_WEATHER_LOADING,
+        isLoading: isLoading
+    }
+}
+
 export function getCurrentWeather(lat, lon) {
     return dispatch => {
+        dispatch(loadingCurrentWeather(true));
         axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=75063&appid=a8e063c9811869e8c8135ef9d1da3c75`)
             .then(res => {
                 if (res.status === 200) {
@@ -29,6 +44,7 @@ export function getCurrentWeather(lat, lon) {
                         tempCelsius: calcCelsius(res.data.main.temp),
                         tempFahrenheit: calcFahrenheit(res.data.main.temp)
                     }
+                    dispatch(loadingCurrentWeather(false));
                     dispatch(currentWeatherSuccess(weatherModel))
                 }
             })
@@ -37,6 +53,7 @@ export function getCurrentWeather(lat, lon) {
 
 export function getForecastWeather(lat, lon) {
     return dispatch => {
+        dispatch(loadingForecast(true));
         axios.get(`https://api.openweathermap.org/data/2.5/forecast?zip=75063&appid=a8e063c9811869e8c8135ef9d1da3c75`)
             .then(res => {
                 if (res.status === 200) {
@@ -70,6 +87,7 @@ export function getForecastWeather(lat, lon) {
                         };
                     }
                     forecastModel.forecastDates.push(res.data.list[res.data.list.length - 1].dt);
+                    dispatch(loadingForecast(false));
                     dispatch(forecastWeatherSuccess(forecastModel));
                 }
             })

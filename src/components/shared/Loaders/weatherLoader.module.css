@@ -1,0 +1,21 @@
+.loader-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.outer {
+    align-self: center;
+}
+
+.outer>div {
+    height: 100px;
+    width: 100px;
+}
+.loading-text {
+    color: white;
+    padding-top: 24px;
+    font-family: "Open Sans";
+    font-size: 18px;
+}
