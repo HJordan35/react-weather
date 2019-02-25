@@ -15,8 +15,6 @@ function forecastWeather(state = {}, action) {
     switch (action.type) {
         case AC.GET_FORECAST_WEATHER_SUCCESS:
             return action.data
-        case AC.GET_FORECAST_WEATHER_LOADING:
-            return { isLoading: action.isLoading }
         default:
             return state
     }
